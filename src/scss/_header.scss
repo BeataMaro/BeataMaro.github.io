@@ -1,0 +1,250 @@
+.header {
+    width: 100vw;
+    min-height: 120vh;
+    position: absolute;
+    background-image: url(../img/tim-mossholder-leaves&boards-unsplash.jpg);
+    background-size: cover;
+    background-repeat: repeat;
+
+    // @media screen and (min-width: 768px) {
+
+    //     background-repeat: no-repeat;
+
+    // }
+
+    h1 {
+        color: $sky-blue;
+        text-align: right;
+    }
+
+    h2 {
+        text-align: right;
+        color: $black;
+        font-weight: 600;
+    }
+
+    //Hamburger menu
+    .hamburger {
+        cursor: pointer;
+        justify-self: center;
+        align-self: center;
+        width: 80px;
+        height: 70px;
+        margin: $space;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        background: $black;
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 20;
+
+        &:hover {
+
+            .hamburger__top--left,
+            .hamburger__top--right,
+            .hamburger__bot--left,
+            .hamburger__bot--right,
+            .hamburger__mid {
+                background: $white;
+            }
+        }
+
+        &__wrapper {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            position: relative;
+            align-items: center;
+            transform-origin: center;
+            transition: .4s ease;
+            animation: pulse 1s infinite alternate-reverse;
+
+
+            body.open & {
+                animation: none;
+                transform: scale(.5);
+
+            }
+
+            @keyframes pulse {
+                from {
+                    transform: scale(1);
+                }
+
+                to {
+                    transform: scale(1.2);
+                }
+            }
+
+        }
+
+        &__top--left,
+        &__top--right,
+        &__bot--left,
+        &__bot--right {
+            width: 15px;
+            height: 2px;
+            background: $grey;
+            position: absolute;
+            transition: all 0.5s;
+        }
+
+        &__mid {
+            width: 30px;
+            height: 2px;
+            background: $grey;
+            position: absolute;
+            transition: all 0.5s;
+        }
+
+        &__top--left {
+            top: 0;
+            left: 0;
+            transform-origin: 0 100%;
+            transform: translateY(5px);
+        }
+
+        &__top--right {
+            top: 0;
+            right: 0;
+            transform-origin: 100% 100%;
+            transform: translateY(5px);
+        }
+
+        &__bot--left {
+            bottom: 0;
+            left: 0;
+            transform-origin: 0 0;
+            transform: translateY(-5px);
+        }
+
+        &__bot--right {
+            bottom: 0;
+            right: 0;
+            transform-origin: 100% 0;
+            transform: translateY(-5px);
+        }
+
+        body.open & {
+            .hamburger__top--left {
+                transform: rotate(45deg) scaleX(1.3) translateY(0);
+            }
+
+            .hamburger__top--right {
+                transform: rotate(-45deg) scaleX(1.3) translateY(0);
+            }
+
+            .hamburger__bot--left {
+                transform: rotate(-45deg) scaleX(1.3) translateY(0);
+            }
+
+            .hamburger__bot--right {
+                transform: rotate(45deg) scaleX(1.3) translateY(0);
+            }
+
+            .hamburger__mid {
+                background: transparent;
+                transform: translateX(40px);
+            }
+
+            .hamburger__bot {
+                transform-origin: 50% 0;
+                transform: rotate(-45deg) translateY(0);
+            }
+        }
+    }
+
+    //Navigation menu
+
+    nav {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        padding: 5 * $space;
+        background: $black;
+        border-radius: 0 0 36px 0;
+        z-index: 10;
+        transition: 300ms ease;
+
+        body.open & {
+            top: -10%;
+            left: 0;
+        }
+
+        // MENU
+
+        .menu {
+            height: 100%;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-evenly;
+
+            .active {
+                cursor: pointer;
+                transform: scale(1.2);
+                text-decoration: overline;
+                color: $sky-blue;
+            }
+
+            &__item {
+                cursor: pointer;
+                font-size: 1.2rem;
+                line-height: 1.2;
+                text-align: center;
+                letter-spacing: 1.5px;
+                transition: 0.5s ease;
+
+                &:hover {
+                    transform: scale(1.2);
+                    text-decoration: overline;
+                    color: $color3;
+                }
+
+                &:active {
+                    color: $color2;
+                }
+            }
+        }
+    }
+
+    //SVG CLOUDS
+
+    svg#cloud1,
+    #cloud2 {
+        position: fixed;
+        z-index: 0;
+        width: 1920px;
+        width: 100%;
+        opacity: 0.8;
+    }
+
+    svg#cloud1 {
+        bottom: -25%;
+        left: 50%;
+        fill: url(#shape-gradient1) $white;
+    }
+
+    svg#cloud2 {
+        bottom: -30%;
+        left: 65%;
+        fill: url(#shape-gradient2) $white;
+    }
+
+    #shape-gradient1 {
+        --color-stop: #45406eab;
+        --color-stop2: #db4852;
+        --color-bot: #d3454e;
+    }
+
+    #shape-gradient2 {
+        --color-stop: #403783;
+        --color-stop2: #f43b47;
+        --color-bot: #f43b47;
+    }
+}

@@ -1,0 +1,88 @@
+//VARIABLES
+
+$white: rgb(230, 235, 235);
+$black: rgb(20, 20, 20);
+$grey: rgb(110, 110, 115);
+$sky-blue: rgb(50, 200, 250);
+
+$color1: rgba(80, 81, 79, 1);
+$color2: rgba(242, 95, 92, 1);
+$color3: rgba(255, 224, 102, 1);
+$color4: rgba(36, 123, 160, 1);
+$color5: rgba(112, 193, 179, 1);
+
+// background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+
+$space: 1rem;
+
+//
+
+body {
+
+    background-color: $color5;
+
+}
+
+
+html {
+    color: $white;
+    font-family: 'Raleway',
+        sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+
+}
+
+// Positioning absolute sections to relative header
+
+::selection {
+
+    color: $color3;
+}
+
+
+section {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2 * $space;
+    background: $black;
+    transition: 550ms ease-in-out;
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.grid-center {
+
+    display: grid;
+    place-items: center;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+}
+
+//TYPOGRAPHY
+
+h1 {
+
+    font-size: 8rem;
+}
+
+h2 {
+
+    font-size: 6rem;
+}

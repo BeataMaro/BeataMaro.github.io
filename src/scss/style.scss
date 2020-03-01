@@ -1,0 +1,16 @@
+// global
+@import 'reset.scss';
+@import 'global.scss';
+
+
+// addons
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,900,900i&display=swap&subset=latin-ext');
+
+// modules
+// @import 'loader.scss';
+@import 'header.scss';
+@import 'projects.scss';
+@import 'skills.scss';
+@import 'about.scss';
+@import 'contact.scss';
+@import 'footer.scss';

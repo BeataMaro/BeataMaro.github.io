@@ -1,0 +1,29 @@
+.skills {
+    // width: 60%;
+    right: -600%;
+    z-index: 20;
+    background: yellow;
+    box-shadow: 0 1px 12px 0 black;
+
+    .icons {
+
+        width: 100%;
+        min-height: 40vh;
+        display: block;
+
+        &__wrapper {
+
+            display: flex;
+
+        }
+
+        &__item {
+            width: 80px;
+            margin-right: $space;
+        }
+    }
+
+    body.Skills & {
+        right: 0;
+    }
+}

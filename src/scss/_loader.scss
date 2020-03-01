@@ -1,0 +1,30 @@
+.preloader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: $white;
+    z-index: 100;
+
+    .loader {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: $black;
+
+
+        .counter {
+            position: fixed;
+            left: 50%;
+            transform: translate(-50%);
+            font-size: 7rem;
+            font-weight: 900;
+            color: $white;
+            mix-blend-mode: difference;
+
+        }
+    }
+}

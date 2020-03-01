@@ -1,0 +1,11 @@
+.about {
+  height: 50vh;
+  line-height: 2.2;
+  opacity: 0;
+  transition: 250ms ease-in-out;
+
+  body.Aboutme & {
+    opacity: 1;
+    // right: -200%;
+  }
+}
