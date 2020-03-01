@@ -1,9 +1,18 @@
 .skills {
-    // width: 60%;
+    // width: 45%;
     right: -600%;
     z-index: 20;
-    background: yellow;
+    background: $black;
     box-shadow: 0 1px 12px 0 black;
+
+    @media screen and (min-width: 768px) {
+
+        width: 60%;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
 
     .icons {
 
@@ -20,6 +29,7 @@
         &__item {
             width: 80px;
             margin-right: $space;
+            margin-top: $space;
         }
     }
 

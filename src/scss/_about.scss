@@ -1,6 +1,6 @@
 .about {
 
-  width: 50vh;
+  width: 50%;
   border-radius: 0 0 0 20px;
   line-height: 2.2;
   opacity: 0;
@@ -13,12 +13,7 @@
 
   h2 {
 
-
-    font-size: 5rem;
-    line-height: 1;
     margin-bottom: 2rem;
-
-
   }
 
   body.Aboutme & {

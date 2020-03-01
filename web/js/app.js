@@ -1,46 +1,46 @@
 //Loading animation Count down
 
-// window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
-//     let preloader = document.querySelector('.preloader');
-//     let loader = document.querySelector('.loader');
-//     let element = document.querySelector('.counter');
+    let preloader = document.querySelector('.preloader');
+    let loader = document.querySelector('.loader');
+    let element = document.querySelector('.counter');
 
-//     let count = 0;
-//     let loadingFunction = setInterval(() => {
+    let count = 0;
+    let loadingFunction = setInterval(() => {
 
-//         if (count < 101) {
-//             document.body.style.position = "fixed";
+        if (count < 101) {
+            document.body.style.position = "fixed";
 
-//             element.textContent = `${count}%`;
-//             loader.style.width = `${count}%`;
-//             count++
-//         } else {
-//             clearInterval(loadingFunction)
-//             document.body.style.position = "absolute";
-//             fadeOut(preloader)
-//         }
+            element.textContent = `${count}%`;
+            loader.style.width = `${count}%`;
+            count++
+        } else {
+            clearInterval(loadingFunction)
+            document.body.style.position = "relative";
+            fadeOut(preloader)
+        }
 
-//     }, 20);
+    }, 20);
 
-//     function fadeOut(element) {
+    function fadeOut(element) {
 
-//         element.style.opacity = 1;
+        element.style.opacity = 1;
 
-//         (function fade() {
-//             if ((element.style.opacity -= 0.1) < 0) {
-//                 element.style.display = 'none';
+        (function fade() {
+            if ((element.style.opacity -= 0.1) < 0) {
+                element.style.display = 'none';
 
-//             } else {
-//                 requestAnimationFrame(fade);
-//             }
+            } else {
+                requestAnimationFrame(fade);
+            }
 
 
-//         })();
-//     }
-// });
+        })();
+    }
+});
 
-// // ***
+/***/
 
 const hamburger = document.getElementById('hamburger'),
     menu = document.getElementById('menu'),

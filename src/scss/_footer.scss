@@ -4,6 +4,22 @@
     text-align: center;
     color: $grey;
     padding: $space;
+    width: 100%;
+    position: absolute;
+    bottom: -35%;
 
+    body.Aboutme & {
 
+        bottom: -50%;
+    }
+
+    body.Projects & {
+
+        bottom: -100%;
+
+        @media screen and (max-width: 768px) {
+
+            bottom: -165%;
+        }
+    }
 }

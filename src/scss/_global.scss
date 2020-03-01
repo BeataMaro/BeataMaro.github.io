@@ -11,8 +11,6 @@ $color3: rgba(255, 224, 102, 1);
 $color4: rgba(36, 123, 160, 1);
 $color5: rgba(112, 193, 179, 1);
 
-// background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
-
 $space: 1rem;
 
 //
@@ -34,24 +32,6 @@ html {
 
 }
 
-//Typography
-
-h1 {
-
-    font-size: 3rem;
-}
-
-h2 {
-
-    font-size: 1rem;
-}
-
-h1,
-h2,
-h3 {
-
-    text-align: left;
-}
 
 ::selection {
 
@@ -99,10 +79,16 @@ a {
 
 h1 {
 
-    font-size: 8rem;
+    font-size: 4rem;
 }
 
 h2 {
 
-    font-size: 6rem;
+    font-size: 2rem;
+}
+
+h1,
+h2 {
+
+    text-align: center;
 }
