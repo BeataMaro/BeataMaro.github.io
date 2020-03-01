@@ -129,13 +129,26 @@ table {
   border-spacing: 0; }
 
 body {
-  background-color: #70c1b3; }
+  background-color: #70c1b3;
+  background-image: url(../img/tim-mossholder-leaves&boards-unsplash.jpg);
+  background-size: cover; }
 
 html {
   color: #e6ebeb;
   font-family: 'Raleway', sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden; }
+
+h1 {
+  font-size: 3rem; }
+
+h2 {
+  font-size: 1rem; }
+
+h1,
+h2,
+h3 {
+  text-align: left; }
 
 ::-moz-selection {
   color: #ffe066; }
@@ -150,7 +163,8 @@ section {
   padding: 2rem;
   background: #141414;
   -webkit-transition: 550ms ease-in-out;
-  transition: 550ms ease-in-out; }
+  transition: 550ms ease-in-out;
+  pointer-events: none; }
 
 a {
   text-decoration: none;
@@ -179,30 +193,23 @@ h2 {
 
 .header {
   width: 100vw;
-  min-height: 120vh;
-  position: absolute;
-  background-image: url(../img/tim-mossholder-leaves&boards-unsplash.jpg);
-  background-size: cover;
-  background-repeat: repeat; }
-  .header h1 {
-    color: #32c8fa;
-    text-align: right; }
-  .header h2 {
-    text-align: right;
-    color: #141414;
-    font-weight: 600; }
+  height: 100vh;
+  position: absolute; }
   .header .hamburger {
     cursor: pointer;
+    position: relative;
     justify-self: center;
     -ms-flex-item-align: center;
         align-self: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 80px;
     height: 70px;
     margin: 1rem;
     -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     background: #141414;
-    position: relative;
     overflow: hidden;
     border-radius: 15px;
     display: -webkit-box;
@@ -211,9 +218,6 @@ h2 {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     z-index: 20; }
     .header .hamburger:hover .hamburger__top--left,
     .header .hamburger:hover .hamburger__top--right,
@@ -328,7 +332,7 @@ h2 {
     position: absolute;
     top: 0;
     left: -100%;
-    height: 100%;
+    height: 90vh;
     padding: 5rem;
     background: #141414;
     border-radius: 0 0 36px 0;
@@ -338,8 +342,12 @@ h2 {
     body.open .header nav {
       top: -10%;
       left: 0; }
+    @media screen and (max-width: 768px) {
+      body.open .header nav {
+        padding: 2rem; } }
     .header nav .menu {
       height: 100%;
+      padding-top: 4rem;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -371,29 +379,6 @@ h2 {
           color: #ffe066; }
         .header nav .menu__item:active {
           color: #f25f5c; }
-  .header svg#cloud1,
-  .header #cloud2 {
-    position: fixed;
-    z-index: 0;
-    width: 1920px;
-    width: 100%;
-    opacity: 0.8; }
-  .header svg#cloud1 {
-    bottom: -25%;
-    left: 50%;
-    fill: url(#shape-gradient1) #e6ebeb; }
-  .header svg#cloud2 {
-    bottom: -30%;
-    left: 65%;
-    fill: url(#shape-gradient2) #e6ebeb; }
-  .header #shape-gradient1 {
-    --color-stop: #45406eab;
-    --color-stop2: #db4852;
-    --color-bot: #d3454e; }
-  .header #shape-gradient2 {
-    --color-stop: #403783;
-    --color-stop2: #f43b47;
-    --color-bot: #f43b47; }
 
 .card {
   display: block;
@@ -413,7 +398,8 @@ h2 {
   user-select: none; }
   body.Projects .slider {
     opacity: 1;
-    height: 50vh; }
+    height: 50vh;
+    pointer-events: auto; }
   .slider__radio {
     display: none; }
   .slider__holder {
@@ -472,12 +458,12 @@ h2 {
       background: rgba(230, 235, 235, 0.3); }
   .slider__item-content .globeIcon {
     top: 50%;
-    left: 80%;
+    left: 70%;
     -webkit-transform: translate(-80%, -50%);
             transform: translate(-80%, -50%); }
   .slider__item-content .githubIcon {
     top: 50%;
-    left: 20%;
+    left: 30%;
     -webkit-transform: translate(-20%, -50%);
             transform: translate(-20%, -50%); }
 
@@ -765,82 +751,87 @@ h2 {
     right: 0; }
 
 .about {
-  height: 50vh;
+  width: 50vh;
+  border-radius: 0 0 0 20px;
   line-height: 2.2;
   opacity: 0;
   -webkit-transition: 250ms ease-in-out;
   transition: 250ms ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .about {
+      width: 60%; } }
+  .about h2 {
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 2rem; }
   body.Aboutme .about {
     opacity: 1; }
 
 .contact {
-  border: 1px solid green;
-  display: none; }
-  .contact__icons .ico {
-    cursor: pointer;
-    width: 100px; }
-  .contact .blueButton {
-    position: relative;
-    cursor: pointer;
-    width: 200px;
-    color: #e6ebeb;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 100px;
-    padding: 12px 54px;
-    background-color: #49caff;
-    -webkit-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-    -webkit-transition: -webkit-transform 0.5s, -webkit-box-shadow 1s;
-    transition: -webkit-transform 0.5s, -webkit-box-shadow 1s;
-    transition: transform 0.5s, box-shadow 1s;
-    transition: transform 0.5s, box-shadow 1s, -webkit-transform 0.5s, -webkit-box-shadow 1s; }
-    .contact .blueButton span {
-      text-align: center;
-      letter-spacing: 1px;
-      font-size: 25px; }
-    .contact .blueButton__mask {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      border-radius: 100px;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background-color: #32c8fa;
-      z-index: -10;
-      -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-      transition: opacity 0.3s, -webkit-transform 0.3s;
-      transition: transform 0.3s, opacity 0.3s;
-      transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s; }
-    .contact .blueButton:hover {
-      -webkit-transform: translateY(-6px);
-              transform: translateY(-6px);
-      -webkit-box-shadow: 0 0 20px rgba(56, 170, 255, 0.4);
-              box-shadow: 0 0 20px rgba(56, 170, 255, 0.4); }
-    .contact .blueButton:hover .blueButton__mask {
-      -webkit-animation: boop 0.5s;
-              animation: boop 0.5s; }
-
-@-webkit-keyframes boop {
-  from {
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    opacity: 0.3; }
-  to {
-    -webkit-transform: scale(1.4, 1.7);
-            transform: scale(1.4, 1.7);
-    opacity: 0; } }
-
-@keyframes boop {
-  from {
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    opacity: 0.3; }
-  to {
-    -webkit-transform: scale(1.4, 1.7);
-            transform: scale(1.4, 1.7);
-    opacity: 0; } }
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 90vh;
+  border-radius: 0 0 0 20px; }
+  @media screen and (min-width: 768px) {
+    .contact {
+      padding: 3rem;
+      height: auto;
+      height: 100vh; } }
+  .contact h2 {
+    text-align: left;
+    font-size: 2rem; }
+  .contact__info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%; }
+  .contact__icons {
+    display: inline-grid;
+    grid-gap: 1rem;
+    font-size: 1.2rem; }
+    @media screen and (min-width: 768px) {
+      .contact__icons {
+        font-size: 1.5rem; } }
+  .contact__data {
+    display: grid;
+    width: 100%;
+    font-size: 1.2rem;
+    padding-left: 1rem; }
+    @media screen and (min-width: 768px) {
+      .contact__data {
+        font-size: 1.5rem; } }
+  .contact__download {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 1rem; }
+    .contact__download .ico {
+      cursor: pointer;
+      width: 100px; }
+      @media screen and (min-width: 768px) {
+        .contact__download .ico {
+          width: 160px; } }
+      .contact__download .ico--github {
+        font-size: 6rem;
+        -webkit-transition: .4s ease-in;
+        transition: .4s ease-in; }
+        @media screen and (min-width: 768px) {
+          .contact__download .ico--github {
+            font-size: 10rem; } }
+        .contact__download .ico--github:hover {
+          color: #32c8fa; }
+  body.Contact .contact {
+    opacity: 1;
+    pointer-events: auto; }
 
 .footer {
   background: #141414;

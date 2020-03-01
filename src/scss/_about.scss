@@ -1,11 +1,27 @@
 .about {
-  height: 50vh;
+
+  width: 50vh;
+  border-radius: 0 0 0 20px;
   line-height: 2.2;
   opacity: 0;
   transition: 250ms ease-in-out;
 
+  @media screen and (min-width: 768px) {
+
+    width: 60%;
+  }
+
+  h2 {
+
+
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+
+
+  }
+
   body.Aboutme & {
     opacity: 1;
-    // right: -200%;
   }
 }

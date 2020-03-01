@@ -1,6 +1,6 @@
 //Loading animation Count down
 
-// document.addEventListener('DOMContentLoaded', () => {
+// window.addEventListener('DOMContentLoaded', () => {
 
 //     let preloader = document.querySelector('.preloader');
 //     let loader = document.querySelector('.loader');
@@ -45,11 +45,6 @@
 const hamburger = document.getElementById('hamburger'),
     menu = document.getElementById('menu'),
     sectionAbout = document.getElementById('about');
-// hamWrapper = documemt.querySelector('.hamburger__wrapper');
-
-
-
-
 
 let menuBtns = menu.getElementsByClassName("menu__item");
 

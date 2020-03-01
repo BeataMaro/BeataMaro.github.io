@@ -20,7 +20,8 @@ $space: 1rem;
 body {
 
     background-color: $color5;
-
+    background-image: url(../img/tim-mossholder-leaves&boards-unsplash.jpg);
+    background-size: cover;
 }
 
 
@@ -33,7 +34,24 @@ html {
 
 }
 
-// Positioning absolute sections to relative header
+//Typography
+
+h1 {
+
+    font-size: 3rem;
+}
+
+h2 {
+
+    font-size: 1rem;
+}
+
+h1,
+h2,
+h3 {
+
+    text-align: left;
+}
 
 ::selection {
 
@@ -49,8 +67,10 @@ section {
     padding: 2 * $space;
     background: $black;
     transition: 550ms ease-in-out;
+    pointer-events: none;
 
 }
+
 
 a {
     text-decoration: none;
