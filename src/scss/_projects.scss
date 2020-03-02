@@ -1,3 +1,8 @@
+.projects {
+
+  border: 3px solid white;
+}
+
 .card {
   position: relative;
   display: block;
@@ -17,10 +22,12 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  background: transparent;
+  margin-bottom: 7 * $space;
 
   body.Projects & {
     opacity: 1;
-    height: 50vh;
+    height: 100vh;
     pointer-events: auto;
   }
 
@@ -153,22 +160,19 @@
 .section {
   position: relative;
   width: 100%;
-  padding: 5 * $space;
+  // padding: 5 * $space;
   text-align: center;
 
   &__entry {
     width: 100%;
-    max-width: 380px;
-    margin: 0 auto;
-  }
+    height: 40vh;
+    background: $black;
+    // max-width: 380px;
 
-  &__title {
-    display: block;
-    padding-bottom: $space;
-  }
-
-  &__text {
-    display: block;
+    //h2
+    &__title {
+      display: block;
+    }
   }
 }
 

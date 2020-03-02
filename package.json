@@ -21,6 +21,7 @@
     "gulp-wait": "0.0.2"
   },
   "dependencies": {
+    "clean-css": "^4.1.11",
     "swiper": "^5.3.1"
   }
 }

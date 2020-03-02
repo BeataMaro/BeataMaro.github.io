@@ -155,15 +155,17 @@
         body.open & {
             top: -10%;
             left: 0;
+            padding: 2 * $space;
         }
 
-        @media screen and (max-width: 768px) {
+        body.Aboutme &,
+        body.Projects &,
+        body.Skills &,
+        body.Contact & {
 
-            body.open & {
-                padding: 2 * $space;
-
-            }
+            left: -100%;
         }
+
 
         // MENU
 

@@ -18,19 +18,32 @@ $space: 1rem;
 
 body {
 
-    background-color: $color5;
+    background-color: $white;
     background-image: url(../img/tim-mossholder-leaves&boards-unsplash.jpg);
-    background-size: cover;
+    background-size: 100%;
+
+    background-repeat: no-repeat;
+    border: 1px solid yellow;
+    overflow: hidden;
 }
+
 
 
 html {
     color: $white;
     font-family: 'Raleway',
         sans-serif;
-    scroll-behavior: smooth;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 
+}
+
+.window {
+
+    border: 1px solid fuchsia;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
 }
 
 
@@ -45,7 +58,6 @@ section {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 2 * $space;
     background: $black;
     transition: 550ms ease-in-out;
     pointer-events: none;

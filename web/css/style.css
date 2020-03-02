@@ -3,8 +3,6 @@
    License: none (public domain)
 */
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,900,900i&display=swap&subset=latin-ext");
-@import url("https://fonts.googleapis.com/css?family=Tillana:400,500,600,700,800&display=swap&subset=latin-ext");
-@import url("https://fonts.googleapis.com/css?family=Petit+Formal+Script&display=swap&subset=latin-ext");
 @import url("https://fonts.googleapis.com/css?family=Charmonman:400,700&display=swap&subset=latin-ext");
 html,
 body,
@@ -132,15 +130,24 @@ table {
   border-spacing: 0; }
 
 body {
-  background-color: #70c1b3;
+  background-color: #e6ebeb;
   background-image: url(../img/tim-mossholder-leaves&boards-unsplash.jpg);
-  background-size: cover; }
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: 1px solid yellow;
+  overflow: hidden; }
 
 html {
   color: #e6ebeb;
   font-family: 'Raleway', sans-serif;
-  scroll-behavior: smooth;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  scroll-behavior: smooth; }
+
+.window {
+  border: 1px solid fuchsia;
+  position: relative;
+  width: 100vw;
+  height: 100vh; }
 
 ::-moz-selection {
   color: #ffe066; }
@@ -152,7 +159,6 @@ section {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 2rem;
   background: #141414;
   -webkit-transition: 550ms ease-in-out;
   transition: 550ms ease-in-out;
@@ -185,31 +191,6 @@ h2 {
 
 h2 {
   font-size: 2rem; }
-
-.preloader {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background: #e6ebeb;
-  z-index: 100; }
-  .preloader .loader {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    background: #141414; }
-    .preloader .loader .counter {
-      position: fixed;
-      left: 50%;
-      -webkit-transform: translate(-50%);
-              transform: translate(-50%);
-      font-family: 'Charmonman', cursive;
-      font-size: 7rem;
-      font-weight: 900;
-      color: #e6ebeb;
-      mix-blend-mode: difference; }
 
 .header {
   width: 100vw;
@@ -361,10 +342,13 @@ h2 {
     transition: 300ms ease; }
     body.open .header nav {
       top: -10%;
-      left: 0; }
-    @media screen and (max-width: 768px) {
-      body.open .header nav {
-        padding: 2rem; } }
+      left: 0;
+      padding: 2rem; }
+    body.Aboutme .header nav,
+    body.Projects .header nav,
+    body.Skills .header nav,
+    body.Contact .header nav {
+      left: -100%; }
     .header nav .menu {
       height: 100%;
       padding-top: 5rem;
@@ -403,17 +387,17 @@ h2 {
 .home {
   background: transparent;
   opacity: 1;
-  top: 30%; }
-  @media screen and (max-width: 768px) {
-    .home {
-      top: 40%; } }
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 1px solid orangered; }
   .home h1 {
     color: #141414;
     text-shadow: 2px 1px #50514f;
     font-size: 3rem;
     font-weight: bolder;
     line-height: 1.2;
-    margin-bottom: 4rem;
     background: rgba(20, 20, 20, 0.2); }
     @media screen and (min-width: 768px) {
       .home h1 {
@@ -436,6 +420,9 @@ h2 {
   body.Contact .home {
     opacity: 0; }
 
+.projects {
+  border: 3px solid white; }
+
 .card {
   position: relative;
   display: block;
@@ -453,10 +440,12 @@ h2 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+  background: transparent;
+  margin-bottom: 7rem; }
   body.Projects .slider {
     opacity: 1;
-    height: 50vh;
+    height: 100vh;
     pointer-events: auto; }
   .slider__radio {
     display: none; }
@@ -557,17 +546,13 @@ h2 {
 .section {
   position: relative;
   width: 100%;
-  padding: 5rem;
   text-align: center; }
   .section__entry {
     width: 100%;
-    max-width: 380px;
-    margin: 0 auto; }
-  .section__title {
-    display: block;
-    padding-bottom: 1rem; }
-  .section__text {
-    display: block; }
+    height: 40vh;
+    background: #141414; }
+    .section__entry__title {
+      display: block; }
 
 /* Functionality
 ----------------------------------------------------------------
@@ -795,18 +780,16 @@ Variables*/
     right: 0; }
 
 .about {
-  width: 65%;
+  width: 100%;
+  padding: 6rem;
   line-height: 2;
   border-radius: 0 0 0 20px;
   -webkit-transition: 250ms ease-in-out;
   transition: 250ms ease-in-out;
-  opacity: 0; }
-  @media screen and (min-width: 768px) {
-    .about {
-      padding: 4rem;
-      width: 60%; } }
+  opacity: 0;
+  z-index: -1; }
   .about h2 {
-    margin-bottom: 2rem;
+    margin: 4rem;
     line-height: 1.4; }
   .about p {
     color: #6e6e73; }
@@ -827,13 +810,10 @@ Variables*/
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  height: 90vh;
   border-radius: 0 0 0 20px; }
   @media screen and (min-width: 768px) {
     .contact {
-      padding: 3rem;
-      height: auto;
-      height: 100vh; } }
+      padding: 3rem; } }
   .contact h2 {
     text-align: left; }
   .contact__info {
@@ -884,21 +864,10 @@ Variables*/
     pointer-events: auto; }
 
 .footer {
-  background: #141414;
+  background: red;
   text-align: center;
   color: #6e6e73;
   padding: 1rem;
   width: 100%;
   position: absolute;
-  bottom: -35%;
-  opacity: 0; }
-  body.Aboutme .footer {
-    bottom: -30%; }
-    @media screen and (max-width: 768px) {
-      body.Aboutme .footer {
-        bottom: -120%; } }
-  body.Projects .footer {
-    bottom: -160%; }
-    @media screen and (max-width: 768px) {
-      body.Projects .footer {
-        bottom: -170%; } }
+  bottom: 0; }
