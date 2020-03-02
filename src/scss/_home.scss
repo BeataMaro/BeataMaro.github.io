@@ -23,14 +23,12 @@
 
         @media screen and (min-width: 768px) {
 
-            font-size: 5rem;
+            font-size: 4rem;
             margin-bottom: 2rem;
         }
     }
 
     h2 {
-
-
         font-size: 2rem;
         font-weight: 700;
         text-transform: uppercase;
@@ -41,9 +39,7 @@
 
         @media screen and (min-width: 768px) {
             margin-top: $space;
-            font-size: 4rem;
-            background: rgba($black, .2);
-
+            font-size: 3rem;
         }
     }
 

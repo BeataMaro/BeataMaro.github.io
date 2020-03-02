@@ -417,7 +417,7 @@ h2 {
     background: rgba(20, 20, 20, 0.2); }
     @media screen and (min-width: 768px) {
       .home h1 {
-        font-size: 5rem;
+        font-size: 4rem;
         margin-bottom: 2rem; } }
   .home h2 {
     font-size: 2rem;
@@ -429,8 +429,7 @@ h2 {
     @media screen and (min-width: 768px) {
       .home h2 {
         margin-top: 1rem;
-        font-size: 4rem;
-        background: rgba(20, 20, 20, 0.2); } }
+        font-size: 3rem; } }
   body.Aboutme .home,
   body.Skills .home,
   body.Projects .home,
@@ -796,7 +795,7 @@ Variables*/
     right: 0; }
 
 .about {
-  width: 50%;
+  width: 65%;
   line-height: 2;
   border-radius: 0 0 0 20px;
   -webkit-transition: 250ms ease-in-out;
@@ -804,10 +803,15 @@ Variables*/
   opacity: 0; }
   @media screen and (min-width: 768px) {
     .about {
+      padding: 4rem;
       width: 60%; } }
   .about h2 {
     margin-bottom: 2rem;
     line-height: 1.4; }
+  .about p {
+    color: #6e6e73; }
+  .about strong {
+    color: #e6ebeb; }
   body.Aboutme .about {
     opacity: 1; }
 
@@ -891,7 +895,7 @@ Variables*/
     bottom: -30%; }
     @media screen and (max-width: 768px) {
       body.Aboutme .footer {
-        bottom: -70%; } }
+        bottom: -120%; } }
   body.Projects .footer {
     bottom: -160%; }
     @media screen and (max-width: 768px) {

@@ -1,6 +1,6 @@
 .about {
 
-  width: 50%;
+  width: 65%;
   line-height: 2;
   border-radius: 0 0 0 20px;
   transition: 250ms ease-in-out;
@@ -8,6 +8,7 @@
 
   @media screen and (min-width: 768px) {
 
+    padding: 4 * $space;
     width: 60%;
   }
 
@@ -15,6 +16,15 @@
 
     margin-bottom: 2rem;
     line-height: 1.4;
+  }
+
+  p {
+
+    color: $grey;
+  }
+
+  strong {
+    color: $white;
   }
 
   body.Aboutme & {
