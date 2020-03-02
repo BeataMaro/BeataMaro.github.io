@@ -63,6 +63,7 @@
       .globeIcon,
       .githubIcon {
         display: block;
+        border-radius: 50%;
         opacity: 1;
       }
     }
@@ -80,20 +81,20 @@
     .githubIcon {
       cursor: pointer;
       position: absolute;
-      padding: $space;
+      padding: 2 * $space;
       width: 100px;
       z-index: 100;
       transition: 0.6s ease;
       display: none;
 
       @media screen and (min-width: 768px) {
-        padding: 2 * $space;
+
         width: 120px;
       }
 
       &:hover {
         opacity: 1;
-        padding: 0;
+        padding: $space;
         background: rgba($white, 0.5);
       }
     }

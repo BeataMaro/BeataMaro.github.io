@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fadeOut(preloader)
         }
 
-    }, 20);
+    }, 10);
 
     function fadeOut(element) {
 

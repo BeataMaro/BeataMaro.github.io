@@ -10,16 +10,22 @@
 
     body.Aboutme & {
 
-        bottom: -50%;
+        bottom: -30%;
+
+        @media screen and (max-width: 768px) {
+
+            bottom: -70%;
+        }
+
     }
 
     body.Projects & {
 
-        bottom: -100%;
+        bottom: -160%;
 
         @media screen and (max-width: 768px) {
 
-            bottom: -165%;
+            bottom: -170%;
         }
     }
 }
