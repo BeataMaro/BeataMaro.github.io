@@ -890,7 +890,8 @@ Variables*/
   padding: 1rem;
   width: 100%;
   position: absolute;
-  bottom: -35%; }
+  bottom: -35%;
+  opacity: 0; }
   body.Aboutme .footer {
     bottom: -30%; }
     @media screen and (max-width: 768px) {
