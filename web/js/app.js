@@ -1,44 +1,44 @@
 //Loading animation Count down
 
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
 
-    let preloader = document.querySelector('.preloader');
-    let loader = document.querySelector('.loader');
-    let element = document.querySelector('.counter');
+//     let preloader = document.querySelector('.preloader');
+//     let loader = document.querySelector('.loader');
+//     let element = document.querySelector('.counter');
 
-    let count = 0;
-    let loadingFunction = setInterval(() => {
+//     let count = 0;
+//     let loadingFunction = setInterval(() => {
 
-        if (count < 101) {
-            document.body.style.position = "fixed";
+//         if (count < 101) {
+//             document.body.style.position = "fixed";
 
-            element.textContent = `${count}%`;
-            loader.style.width = `${count}%`;
-            count++
-        } else {
-            clearInterval(loadingFunction)
-            document.body.style.position = "relative";
-            fadeOut(preloader)
-        }
+//             element.textContent = `${count}%`;
+//             loader.style.width = `${count}%`;
+//             count++
+//         } else {
+//             clearInterval(loadingFunction)
+//             document.body.style.position = "relative";
+//             fadeOut(preloader)
+//         }
 
-    }, 10);
+//     }, 10);
 
-    function fadeOut(element) {
+//     function fadeOut(element) {
 
-        element.style.opacity = 1;
+//         element.style.opacity = 1;
 
-        (function fade() {
-            if ((element.style.opacity -= 0.1) < 0) {
-                element.style.display = 'none';
+//         (function fade() {
+//             if ((element.style.opacity -= 0.1) < 0) {
+//                 element.style.display = 'none';
 
-            } else {
-                requestAnimationFrame(fade);
-            }
+//             } else {
+//                 requestAnimationFrame(fade);
+//             }
 
 
-        })();
-    }
-});
+//         })();
+//     }
+// });
 
 /***/
 
@@ -52,7 +52,6 @@ let menuBtns = menu.getElementsByClassName("menu__item");
 
 
 hamburger.onclick = () => document.body.classList.toggle('open');
-
 
 // Loop through the buttons and add the active class to the current / clicked button
 for (var i = 0; i < menuBtns.length; i++) {
@@ -72,7 +71,7 @@ for (var i = 0; i < menuBtns.length; i++) {
         if (this.classList.contains('active')) {
             let txtContent = this.textContent;
             txtContent = txtContent.replace(' ', '');
-            document.body.className = `open ${txtContent}`
+            document.body.className = `${txtContent}`
         }
 
     });

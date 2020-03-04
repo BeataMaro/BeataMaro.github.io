@@ -6,27 +6,7 @@
     padding: $space;
     width: 100%;
     position: absolute;
-    bottom: -35%;
-    opacity: 0;
+    bottom: 0;
+    overflow: hidden;
 
-    body.Aboutme & {
-
-        bottom: -30%;
-
-        @media screen and (max-width: 768px) {
-
-            bottom: -120%;
-        }
-
-    }
-
-    body.Projects & {
-
-        bottom: -160%;
-
-        @media screen and (max-width: 768px) {
-
-            bottom: -170%;
-        }
-    }
 }

@@ -21,6 +21,8 @@
     "gulp-wait": "0.0.2"
   },
   "dependencies": {
+    "clean-css": "^4.1.11",
+    "lodash.template": "^4.5.0",
     "swiper": "^5.3.1"
   }
 }
