@@ -1,29 +1,30 @@
 .about {
-
   width: 100%;
-  padding: 6 * $space;
   line-height: 2;
+  padding: 2 * $space;
   border-radius: 0 0 0 20px;
-  // overflow: hidden;
   transition: 250ms ease-in-out;
   opacity: 0;
   z-index: -1;
 
-  @media screen and (min-width: 768px) {
-
-    // padding: $space;
-    // width: 60%;
+  @include tablet {
+    width: 80%;
+    padding: 4 * $space;
   }
+
 
   h2 {
 
-    margin: 4rem;
     line-height: 1.4;
+    padding-top: 3 * $space;
+
   }
 
   p {
-
     color: $grey;
+    margin: $space;
+
+    @include tablet {}
   }
 
   strong {

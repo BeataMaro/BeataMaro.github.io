@@ -1,11 +1,12 @@
 .footer {
 
-    background: red;
+    background: $black;
     text-align: center;
     color: $grey;
     padding: $space;
     width: 100%;
     position: absolute;
     bottom: 0;
+    overflow: hidden;
 
 }

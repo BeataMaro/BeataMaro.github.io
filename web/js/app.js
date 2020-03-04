@@ -53,7 +53,6 @@ let menuBtns = menu.getElementsByClassName("menu__item");
 
 hamburger.onclick = () => document.body.classList.toggle('open');
 
-
 // Loop through the buttons and add the active class to the current / clicked button
 for (var i = 0; i < menuBtns.length; i++) {
     menuBtns[i].addEventListener("click", function () {
@@ -72,7 +71,7 @@ for (var i = 0; i < menuBtns.length; i++) {
         if (this.classList.contains('active')) {
             let txtContent = this.textContent;
             txtContent = txtContent.replace(' ', '');
-            document.body.className = `open ${txtContent}`
+            document.body.className = `${txtContent}`
         }
 
     });

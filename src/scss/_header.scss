@@ -12,14 +12,14 @@
         align-items: center;
         width: 80px;
         height: 70px;
-        margin: $space;
+        margin: 3 * $space $space;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
         background: $black;
         overflow: hidden;
         border-radius: 15px;
         display: flex;
         justify-content: center;
-        z-index: 20;
+        z-index: 200;
 
         &:hover {
 
@@ -146,16 +146,16 @@
         top: 0;
         left: -100%;
         height: 99vh;
-        padding: 3 * $space;
-        background: $black;
+        background: black;
         border-radius: 0 0 36px 0;
         z-index: 10;
         transition: 300ms ease;
 
         body.open & {
-            top: -10%;
+            top: -5%;
             left: 0;
             padding: 2 * $space;
+            z-index: 120;
         }
 
         body.Aboutme &,
@@ -166,12 +166,25 @@
             left: -100%;
         }
 
+        body.Aboutme,
+        body.open &,
+        body.Projects,
+        body.open &,
+        body.Skills,
+        body.open &,
+        body.Contact,
+        body.open & {
+
+            left: 0;
+        }
+
 
         // MENU
 
         .menu {
             height: 100%;
-            padding-top: 5 * $space;
+            padding: 2 * $space;
+            padding-top: 6 * $space;
             display: flex;
             flex-flow: column wrap;
             justify-content: space-evenly;

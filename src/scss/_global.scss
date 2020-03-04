@@ -13,6 +13,22 @@ $color4: rgba(36, 123, 160, 1);
 $color5: rgba(112, 193, 179, 1);
 
 $space: 1rem;
+$bp-tablet: 768px;
+$bp-desktop: 1200px;
+
+//mixins
+
+@mixin tablet {
+    @media screen and (min-width: $bp-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $bp-desktop) {
+        @content;
+    }
+}
 
 //
 
@@ -20,11 +36,12 @@ body {
 
     background-color: $white;
     background-image: url(../img/tim-mossholder-leaves&boards-unsplash.jpg);
-    background-size: 100%;
+    background-size: cover;
+    background-position: bottom;
 
-    background-repeat: no-repeat;
-    border: 1px solid yellow;
-    overflow: hidden;
+    @include tablet {
+        background-position: center;
+    }
 }
 
 
@@ -36,14 +53,6 @@ html {
     overflow-x: hidden;
     scroll-behavior: smooth;
 
-}
-
-.window {
-
-    border: 1px solid fuchsia;
-    position: relative;
-    width: 100vw;
-    height: 100vh;
 }
 
 
@@ -61,6 +70,7 @@ section {
     background: $black;
     transition: 550ms ease-in-out;
     pointer-events: none;
+    margin-bottom: 2 * $space;
 
 }
 

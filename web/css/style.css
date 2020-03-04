@@ -104,7 +104,8 @@ footer,
 header,
 hgroup,
 menu,
-nav {
+nav,
+section {
   display: block; }
 
 body {
@@ -132,22 +133,17 @@ table {
 body {
   background-color: #e6ebeb;
   background-image: url(../img/tim-mossholder-leaves&boards-unsplash.jpg);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border: 1px solid yellow;
-  overflow: hidden; }
+  background-size: cover;
+  background-position: bottom; }
+  @media screen and (min-width: 768px) {
+    body {
+      background-position: center; } }
 
 html {
   color: #e6ebeb;
   font-family: 'Raleway', sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth; }
-
-.window {
-  border: 1px solid fuchsia;
-  position: relative;
-  width: 100vw;
-  height: 100vh; }
 
 ::-moz-selection {
   color: #ffe066; }
@@ -162,7 +158,8 @@ section {
   background: #141414;
   -webkit-transition: 550ms ease-in-out;
   transition: 550ms ease-in-out;
-  pointer-events: none; }
+  pointer-events: none;
+  margin-bottom: 2rem; }
 
 a {
   text-decoration: none;
@@ -207,7 +204,7 @@ h2 {
             align-items: center;
     width: 80px;
     height: 70px;
-    margin: 1rem;
+    margin: 3rem 1rem;
     -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     background: #141414;
@@ -219,7 +216,7 @@ h2 {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    z-index: 20; }
+    z-index: 200; }
     .header .hamburger:hover .hamburger__top--left,
     .header .hamburger:hover .hamburger__top--right,
     .header .hamburger:hover .hamburger__bot--left,
@@ -334,24 +331,34 @@ h2 {
     top: 0;
     left: -100%;
     height: 99vh;
-    padding: 3rem;
-    background: #141414;
+    background: black;
     border-radius: 0 0 36px 0;
     z-index: 10;
     -webkit-transition: 300ms ease;
     transition: 300ms ease; }
     body.open .header nav {
-      top: -10%;
+      top: -5%;
       left: 0;
-      padding: 2rem; }
+      padding: 2rem;
+      z-index: 120; }
     body.Aboutme .header nav,
     body.Projects .header nav,
     body.Skills .header nav,
     body.Contact .header nav {
       left: -100%; }
+    .header nav body.Aboutme,
+    body.open .header nav,
+    .header nav body.Projects,
+    body.open .header nav,
+    .header nav body.Skills,
+    body.open .header nav,
+    .header nav body.Contact,
+    body.open .header nav {
+      left: 0; }
     .header nav .menu {
       height: 100%;
-      padding-top: 5rem;
+      padding: 2rem;
+      padding-top: 6rem;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -387,28 +394,24 @@ h2 {
 .home {
   background: transparent;
   opacity: 1;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  border: 1px solid orangered; }
+  display: grid;
+  place-items: center;
+  top: 35%;
+  width: 100%; }
   .home h1 {
     color: #141414;
-    text-shadow: 2px 1px #50514f;
     font-size: 3rem;
     font-weight: bolder;
     line-height: 1.2;
-    background: rgba(20, 20, 20, 0.2); }
-    @media screen and (min-width: 768px) {
+    margin-bottom: 4rem; }
+    @media screen and (min-width: 1200px) {
       .home h1 {
         font-size: 4rem;
         margin-bottom: 2rem; } }
   .home h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-shadow: 5px 1px #141414;
-    letter-spacing: 5px;
+    font-size: 5rem;
+    font-weight: 500;
+    text-shadow: 2px 0 #141414;
     color: #ffe066; }
     @media screen and (min-width: 768px) {
       .home h2 {
@@ -420,18 +423,18 @@ h2 {
   body.Contact .home {
     opacity: 0; }
 
-.projects {
-  border: 3px solid white; }
-
 .card {
   position: relative;
   display: block;
-  height: 15em;
-  height: 17em;
   border-radius: 8px;
+  height: 11em;
+  width: 10em;
   background: #141414;
   -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.1); }
+  @media screen and (min-width: 768px) {
+    .card {
+      height: 17em; } }
 
 .slider {
   opacity: 0;
@@ -442,7 +445,7 @@ h2 {
   -ms-user-select: none;
   user-select: none;
   background: transparent;
-  margin-bottom: 7rem; }
+  margin-top: -2rem; }
   body.Projects .slider {
     opacity: 1;
     height: 100vh;
@@ -453,25 +456,26 @@ h2 {
     position: relative;
     width: 100%;
     max-width: 650px;
-    margin: 0 auto;
-    margin-top: 5rem;
-    text-align: left; }
+    margin: 0 auto; }
     @media (max-width: 900px) {
       .slider__holder {
         max-width: 540px; } }
     @media (max-width: 600px) {
       .slider__holder {
-        max-width: 500px;
+        max-width: 400px;
         margin-top: 60px; } }
   .slider__item {
     position: absolute;
     top: 0;
     left: 0;
     overflow: hidden;
-    width: 100%;
+    width: 80%;
     opacity: 1;
     -webkit-transition: 350ms ease-in;
     transition: 350ms ease-in; }
+    @media screen and (min-width: 768px) {
+      .slider__item {
+        width: 100%; } }
     .slider__item:hover img {
       opacity: 0.5; }
     .slider__item:hover .globeIcon,
@@ -759,11 +763,16 @@ Variables*/
   right: -600%;
   z-index: 20;
   background: #141414;
+  padding: 2rem;
   -webkit-box-shadow: 0 1px 12px 0 black;
-          box-shadow: 0 1px 12px 0 black; }
+          box-shadow: 0 1px 12px 0 black;
+  border-radius: 20px 0 0 20px;
+  top: 20%; }
   @media screen and (min-width: 768px) {
     .skills {
-      width: 60%; } }
+      top: initial;
+      width: 60%;
+      padding: 3rem; } }
   .skills .icons {
     width: 100%;
     min-height: 40vh;
@@ -776,23 +785,30 @@ Variables*/
       width: 80px;
       margin-right: 1rem;
       margin-top: 1rem; }
+    .skills .icons span {
+      margin-left: 20px; }
   body.Skills .skills {
     right: 0; }
 
 .about {
   width: 100%;
-  padding: 6rem;
   line-height: 2;
+  padding: 2rem;
   border-radius: 0 0 0 20px;
   -webkit-transition: 250ms ease-in-out;
   transition: 250ms ease-in-out;
   opacity: 0;
   z-index: -1; }
+  @media screen and (min-width: 768px) {
+    .about {
+      width: 80%;
+      padding: 4rem; } }
   .about h2 {
-    margin: 4rem;
-    line-height: 1.4; }
+    line-height: 1.4;
+    padding-top: 3rem; }
   .about p {
-    color: #6e6e73; }
+    color: #6e6e73;
+    margin: 1rem; }
   .about strong {
     color: #e6ebeb; }
   body.Aboutme .about {
@@ -810,12 +826,16 @@ Variables*/
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  border-radius: 0 0 0 20px; }
+  border-radius: 20px 0 0 20px;
+  padding: 3rem;
+  top: 20%; }
   @media screen and (min-width: 768px) {
     .contact {
-      padding: 3rem; } }
+      padding: 5rem;
+      top: 0; } }
   .contact h2 {
-    text-align: left; }
+    text-align: left;
+    margin-bottom: 1rem; }
   .contact__info {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -864,10 +884,11 @@ Variables*/
     pointer-events: auto; }
 
 .footer {
-  background: red;
+  background: #141414;
   text-align: center;
   color: #6e6e73;
   padding: 1rem;
   width: 100%;
   position: absolute;
-  bottom: 0; }
+  bottom: 0;
+  overflow: hidden; }
