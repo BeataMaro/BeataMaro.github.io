@@ -130,19 +130,30 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+* {
+  overflow: hidden; }
+
 body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #e6ebeb;
   background-image: url(../img/tim-mossholder-leaves&boards-unsplash.jpg);
   background-size: cover;
-  background-position: bottom; }
+  background-position: bottom;
+  max-width: 100%; }
   @media screen and (min-width: 768px) {
     body {
-      background-position: center; } }
+      background-position: right; } }
+  @media screen and (min-width: 1200px) {
+    body {
+      background-position: left; } }
 
 html {
   color: #e6ebeb;
   font-family: 'Raleway', sans-serif;
-  overflow-x: hidden;
   scroll-behavior: smooth; }
 
 ::-moz-selection {
@@ -159,7 +170,8 @@ section {
   -webkit-transition: 550ms ease-in-out;
   transition: 550ms ease-in-out;
   pointer-events: none;
-  margin-bottom: 2rem; }
+  -webkit-box-shadow: 0 1px 12px 0 black;
+          box-shadow: 0 1px 12px 0 black; }
 
 a {
   text-decoration: none;
@@ -183,16 +195,19 @@ a {
 h1,
 h2 {
   text-align: center;
-  font-family: 'Charmonman', cursive;
-  color: #ffe066; }
+  color: #ffe066;
+  font-family: inherit; }
 
 h2 {
+  font-family: 'Charmonman', cursive;
   font-size: 2rem; }
 
 .header {
-  width: 100vw;
-  height: 100vh;
-  position: absolute; }
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: -webkit-gradient(linear, right top, left top, from(#ffc400), color-stop(#c49a27), to(orangered));
+  background-image: linear-gradient(to left, #ffc400, #c49a27, orangered); }
   .header .hamburger {
     cursor: pointer;
     position: relative;
@@ -204,7 +219,7 @@ h2 {
             align-items: center;
     width: 80px;
     height: 70px;
-    margin: 3rem 1rem;
+    margin: 1rem;
     -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     background: #141414;
@@ -217,6 +232,9 @@ h2 {
         -ms-flex-pack: center;
             justify-content: center;
     z-index: 200; }
+    @media screen and (min-width: 768px) {
+      .header .hamburger {
+        margin: 3rem; } }
     .header .hamburger:hover .hamburger__top--left,
     .header .hamburger:hover .hamburger__top--right,
     .header .hamburger:hover .hamburger__bot--left,
@@ -333,13 +351,11 @@ h2 {
     height: 99vh;
     background: black;
     border-radius: 0 0 36px 0;
-    z-index: 10;
+    padding: 3rem;
     -webkit-transition: 300ms ease;
     transition: 300ms ease; }
     body.open .header nav {
-      top: -5%;
       left: 0;
-      padding: 2rem;
       z-index: 120; }
     body.Aboutme .header nav,
     body.Projects .header nav,
@@ -380,6 +396,7 @@ h2 {
         font-size: 1.2rem;
         line-height: 1.2;
         text-align: center;
+        margin-bottom: 1rem;
         letter-spacing: 1.5px;
         -webkit-transition: 0.5s ease;
         transition: 0.5s ease; }
@@ -396,42 +413,49 @@ h2 {
   opacity: 1;
   display: grid;
   place-items: center;
-  top: 35%;
-  width: 100%; }
+  width: 100vw;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  overflow: hidden;
+  -webkit-box-shadow: none;
+          box-shadow: none; }
   .home h1 {
-    color: #141414;
+    color: #e6ebeb;
     font-size: 3rem;
-    font-weight: bolder;
-    line-height: 1.2;
-    margin-bottom: 4rem; }
+    font-weight: bolder; }
     @media screen and (min-width: 1200px) {
       .home h1 {
         font-size: 4rem;
-        margin-bottom: 2rem; } }
+        margin-bottom: 1rem; } }
   .home h2 {
-    font-size: 5rem;
-    font-weight: 500;
-    text-shadow: 2px 0 #141414;
-    color: #ffe066; }
+    font-size: 3rem;
+    font-weight: 900;
+    color: #141414; }
     @media screen and (min-width: 768px) {
       .home h2 {
-        margin-top: 1rem;
-        font-size: 3rem; } }
+        margin-top: 1rem; } }
   body.Aboutme .home,
   body.Skills .home,
   body.Projects .home,
   body.Contact .home {
     opacity: 0; }
 
+.projects {
+  padding-bottom: 1rem;
+  z-index: 40; }
+
 .card {
   position: relative;
   display: block;
   border-radius: 8px;
-  height: 11em;
+  height: 8.5em;
   width: 10em;
   background: #141414;
+  margin: 0 auto;
   -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.1); }
+          box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  overflow: visible; }
   @media screen and (min-width: 768px) {
     .card {
       height: 17em; } }
@@ -445,10 +469,10 @@ h2 {
   -ms-user-select: none;
   user-select: none;
   background: transparent;
-  margin-top: -2rem; }
+  -webkit-box-shadow: none;
+          box-shadow: none; }
   body.Projects .slider {
     opacity: 1;
-    height: 100vh;
     pointer-events: auto; }
   .slider__radio {
     display: none; }
@@ -524,16 +548,14 @@ h2 {
             transform: translate(-30%, -50%); }
 
 .bullets {
-  z-index: 10;
+  z-index: 100;
   display: block;
   width: auto;
   height: 10px;
   height: 10px;
   margin-top: 2rem;
-  text-align: center; }
-  @media (max-width: 768px) {
-    .bullets {
-      margin-top: 1rem; } }
+  text-align: center;
+  overflow: visible; }
   .bullets__item {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
@@ -541,7 +563,7 @@ h2 {
     width: 10px;
     height: 10px;
     margin: 0 4px;
-    border-radius: 6px;
+    border-radius: 50%;
     background: rgba(20, 20, 20, 0.4);
     cursor: pointer; }
     .bullets__item:hover {
@@ -553,7 +575,7 @@ h2 {
   text-align: center; }
   .section__entry {
     width: 100%;
-    height: 40vh;
+    height: 30vh;
     background: #141414; }
     .section__entry__title {
       display: block; }
@@ -760,14 +782,13 @@ Variables*/
     background: #e6ebeb; }
 
 .skills {
+  top: 20%;
   right: -600%;
-  z-index: 20;
-  background: #141414;
   padding: 2rem;
   -webkit-box-shadow: 0 1px 12px 0 black;
           box-shadow: 0 1px 12px 0 black;
   border-radius: 20px 0 0 20px;
-  top: 20%; }
+  z-index: 20; }
   @media screen and (min-width: 768px) {
     .skills {
       top: initial;
@@ -792,13 +813,13 @@ Variables*/
 
 .about {
   width: 100%;
-  line-height: 2;
-  padding: 2rem;
+  line-height: 1.8;
+  padding: 4rem 1rem 1rem;
   border-radius: 0 0 0 20px;
   -webkit-transition: 250ms ease-in-out;
   transition: 250ms ease-in-out;
   opacity: 0;
-  z-index: -1; }
+  z-index: 40; }
   @media screen and (min-width: 768px) {
     .about {
       width: 80%;
@@ -815,20 +836,13 @@ Variables*/
     opacity: 1; }
 
 .contact {
+  top: 20%;
   opacity: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  padding: 2rem;
+  -webkit-box-shadow: 0 1px 12px 0 black;
+          box-shadow: 0 1px 12px 0 black;
   border-radius: 20px 0 0 20px;
-  padding: 3rem;
-  top: 20%; }
+  z-index: 50; }
   @media screen and (min-width: 768px) {
     .contact {
       padding: 5rem;
@@ -888,7 +902,7 @@ Variables*/
   text-align: center;
   color: #6e6e73;
   padding: 1rem;
-  width: 100%;
+  margin-top: 1rem;
+  width: 100vw;
   position: absolute;
-  bottom: 0;
-  overflow: hidden; }
+  bottom: 0; }

@@ -71,7 +71,8 @@ for (var i = 0; i < menuBtns.length; i++) {
         if (this.classList.contains('active')) {
             let txtContent = this.textContent;
             txtContent = txtContent.replace(' ', '');
-            document.body.className = `${txtContent}`
+            document.body.className = `${txtContent}`;
+
         }
 
     });

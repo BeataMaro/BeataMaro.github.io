@@ -1,17 +1,17 @@
 .about {
   width: 100%;
-  line-height: 2;
-  padding: 2 * $space;
+  line-height: 1.8;
+  padding: (4 * $space) $space $space;
   border-radius: 0 0 0 20px;
   transition: 250ms ease-in-out;
   opacity: 0;
-  z-index: -1;
+  z-index: 40;
+
 
   @include tablet {
     width: 80%;
     padding: 4 * $space;
   }
-
 
   h2 {
 
