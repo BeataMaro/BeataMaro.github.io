@@ -453,7 +453,7 @@ h2 {
         .home h2::before {
           height: 300%;
           top: -250%;
-          left: -4rem; } }
+          left: -5rem; } }
   body.Aboutme .home,
   body.Skills .home,
   body.Projects .home,
@@ -602,7 +602,7 @@ h2 {
     width: 100%;
     height: 30vh;
     background: #141414;
-    background-image: url(../img/pawel-czerwinski-HFIiAWrGABQ-unsplash.jpg);
+    background-image: url(../img/pawel-czerwinski-background-unsplash.jpg);
     background-size: cover;
     background-position: left; }
     .section__entry__title {
