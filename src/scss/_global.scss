@@ -2,6 +2,7 @@
 
 $white: rgb(230, 235, 235);
 $black: rgb(20, 20, 20);
+$deep-black: black;
 $grey: rgb(110, 110, 115);
 $sky-blue: rgb(50, 200, 250);
 $blue: #95c7df;
@@ -11,6 +12,9 @@ $color2: rgba(242, 95, 92, 1);
 $color3: rgba(255, 224, 102, 1);
 $color4: rgba(36, 123, 160, 1);
 $color5: rgba(112, 193, 179, 1);
+
+
+
 
 $space: 1rem;
 $bp-tablet: 768px;
@@ -36,27 +40,26 @@ $bp-desktop: 1200px;
     overflow: hidden;
 }
 
+
 body {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: $white;
-    background-image: url(../img/tim-mossholder-leaves&boards-unsplash.jpg);
+    background-color: $deep-black;
+    background-image: url(../img/pawel-czerwinski-background-unsplash.jpg);
+    background-size: 100%;
     background-size: cover;
-    background-position: bottom;
-    max-width: 100%;
-
-
-    @include tablet {
-        background-position: right;
-    }
+    background-position: top;
+    background-repeat: no-repeat;
 
     @include desktop {
-        background-position: left;
+
+        max-width: 100%;
 
     }
+
 }
 
 
@@ -78,12 +81,12 @@ html {
 section {
 
     position: absolute;
-    top: 0;
     right: 0;
-    background: $black;
     transition: 550ms ease-in-out;
     pointer-events: none;
-    box-shadow: 0 1px 12px 0 black;
+    overflow: visible;
+    background: $black;
+
 }
 
 
@@ -116,8 +119,8 @@ h1,
 h2 {
 
     text-align: center;
-    color: $color3;
     font-family: inherit;
+
 }
 
 h2 {
@@ -125,4 +128,5 @@ h2 {
     font-family: 'Charmonman',
         cursive;
     font-size: 2rem;
+    // color: $color2;
 }

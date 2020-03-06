@@ -2,14 +2,13 @@
     top: 20%;
     right: -600%;
     padding: 2 * $space;
-    box-shadow: 0 1px 12px 0 black;
+    box-shadow: 0 1px 12px 0 $deep-black;
     border-radius: 20px 0 0 20px;
     z-index: 20;
 
     @include tablet {
         top: initial;
-        width: 60%;
-        padding: 3 * $space;
+        width: 50%;
     }
 
     .icons {
@@ -36,5 +35,7 @@
 
     body.Skills & {
         right: 0;
+
+
     }
 }

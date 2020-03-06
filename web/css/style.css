@@ -139,17 +139,15 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #e6ebeb;
-  background-image: url(../img/tim-mossholder-leaves&boards-unsplash.jpg);
+  background-color: black;
+  background-image: url(../img/pawel-czerwinski-background-unsplash.jpg);
+  background-size: 100%;
   background-size: cover;
-  background-position: bottom;
-  max-width: 100%; }
-  @media screen and (min-width: 768px) {
-    body {
-      background-position: right; } }
+  background-position: top;
+  background-repeat: no-repeat; }
   @media screen and (min-width: 1200px) {
     body {
-      background-position: left; } }
+      max-width: 100%; } }
 
 html {
   color: #e6ebeb;
@@ -164,14 +162,12 @@ html {
 
 section {
   position: absolute;
-  top: 0;
   right: 0;
-  background: #141414;
   -webkit-transition: 550ms ease-in-out;
   transition: 550ms ease-in-out;
   pointer-events: none;
-  -webkit-box-shadow: 0 1px 12px 0 black;
-          box-shadow: 0 1px 12px 0 black; }
+  overflow: visible;
+  background: #141414; }
 
 a {
   text-decoration: none;
@@ -195,7 +191,6 @@ a {
 h1,
 h2 {
   text-align: center;
-  color: #ffe066;
   font-family: inherit; }
 
 h2 {
@@ -203,11 +198,7 @@ h2 {
   font-size: 2rem; }
 
 .header {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-image: -webkit-gradient(linear, right top, left top, from(#ffc400), color-stop(#c49a27), to(orangered));
-  background-image: linear-gradient(to left, #ffc400, #c49a27, orangered); }
+  position: absolute; }
   .header .hamburger {
     cursor: pointer;
     position: relative;
@@ -232,9 +223,10 @@ h2 {
         -ms-flex-pack: center;
             justify-content: center;
     z-index: 200; }
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1200px) {
       .header .hamburger {
-        margin: 3rem; } }
+        background: #141414;
+        margin: 1rem; } }
     .header .hamburger:hover .hamburger__top--left,
     .header .hamburger:hover .hamburger__top--right,
     .header .hamburger:hover .hamburger__bot--left,
@@ -242,6 +234,7 @@ h2 {
     .header .hamburger:hover .hamburger__mid {
       background: #e6ebeb; }
     .header .hamburger__wrapper {
+      position: relative;
       width: 30px;
       height: 30px;
       display: -webkit-box;
@@ -250,11 +243,10 @@ h2 {
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center;
-      margin: auto;
-      position: relative;
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center;
+      margin: auto;
       -webkit-transform-origin: center;
               transform-origin: center;
       -webkit-transition: .4s ease;
@@ -282,10 +274,10 @@ h2 {
     -webkit-transform: scale(1.2);
             transform: scale(1.2); } }
     .header .hamburger__top--left, .header .hamburger__top--right, .header .hamburger__bot--left, .header .hamburger__bot--right {
+      position: absolute;
       width: 15px;
       height: 2px;
       background: #6e6e73;
-      position: absolute;
       -webkit-transition: all 0.5s;
       transition: all 0.5s; }
     .header .hamburger__mid {
@@ -345,18 +337,18 @@ h2 {
       -webkit-transform: rotate(-45deg) translateY(0);
               transform: rotate(-45deg) translateY(0); }
   .header nav {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: -100%;
-    height: 99vh;
+    height: 100vh;
     background: black;
+    padding: 2rem;
     border-radius: 0 0 36px 0;
-    padding: 3rem;
     -webkit-transition: 300ms ease;
     transition: 300ms ease; }
     body.open .header nav {
       left: 0;
-      z-index: 120; }
+      z-index: 150; }
     body.Aboutme .header nav,
     body.Projects .header nav,
     body.Skills .header nav,
@@ -374,7 +366,6 @@ h2 {
     .header nav .menu {
       height: 100%;
       padding: 2rem;
-      padding-top: 6rem;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -391,6 +382,9 @@ h2 {
                 transform: scale(1.2);
         text-decoration: overline;
         color: #32c8fa; }
+      @media screen and (min-width: 1200px) {
+        .header nav .menu {
+          padding-top: 5rem; } }
       .header nav .menu__item {
         cursor: pointer;
         font-size: 1.2rem;
@@ -404,37 +398,62 @@ h2 {
           -webkit-transform: scale(1.2);
                   transform: scale(1.2);
           text-decoration: overline;
-          color: #ffe066; }
-        .header nav .menu__item:active {
           color: #f25f5c; }
+        .header nav .menu__item:active {
+          color: #ffe066; }
 
 .home {
   background: transparent;
+  top: 30%;
   opacity: 1;
-  display: grid;
-  place-items: center;
-  width: 100vw;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  overflow: hidden;
+  width: 100%;
   -webkit-box-shadow: none;
           box-shadow: none; }
+  @media screen and (min-width: 768px) {
+    .home {
+      top: 40%; } }
+  @media screen and (min-width: 1200px) {
+    .home {
+      top: 50%;
+      left: 65%;
+      -webkit-transform: translate(-60%, -50%);
+              transform: translate(-60%, -50%); } }
   .home h1 {
     color: #e6ebeb;
-    font-size: 3rem;
-    font-weight: bolder; }
-    @media screen and (min-width: 1200px) {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    margin-top: 1rem; }
+    @media screen and (min-width: 768px) {
       .home h1 {
-        font-size: 4rem;
-        margin-bottom: 1rem; } }
+        font-size: 4rem; } }
   .home h2 {
     font-size: 3rem;
     font-weight: 900;
-    color: #141414; }
-    @media screen and (min-width: 768px) {
-      .home h2 {
-        margin-top: 1rem; } }
+    color: salmon;
+    position: relative;
+    overflow: visible;
+    margin-top: 1rem; }
+    .home h2::before {
+      content: '';
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      position: absolute;
+      top: -150%;
+      width: 100%;
+      height: 200%;
+      z-index: -1;
+      background: black;
+      padding: 3rem; }
+      @media screen and (min-width: 768px) {
+        .home h2::before {
+          height: 200%;
+          top: -250%; } }
+      @media screen and (min-width: 1200px) {
+        .home h2::before {
+          height: 300%;
+          top: -250%;
+          left: -4rem; } }
   body.Aboutme .home,
   body.Skills .home,
   body.Projects .home,
@@ -442,8 +461,13 @@ h2 {
     opacity: 0; }
 
 .projects {
-  padding-bottom: 1rem;
-  z-index: 40; }
+  z-index: 40;
+  height: 80vh; }
+  @media screen and (min-width: 1200px) {
+    .projects {
+      height: 85vh;
+      padding-bottom: 1rem;
+      background: black; } }
 
 .card {
   position: relative;
@@ -467,10 +491,7 @@ h2 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
-  background: transparent;
-  -webkit-box-shadow: none;
-          box-shadow: none; }
+  user-select: none; }
   body.Projects .slider {
     opacity: 1;
     pointer-events: auto; }
@@ -480,7 +501,8 @@ h2 {
     position: relative;
     width: 100%;
     max-width: 650px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    overflow: visible; }
     @media (max-width: 900px) {
       .slider__holder {
         max-width: 540px; } }
@@ -518,7 +540,7 @@ h2 {
     cursor: pointer;
     position: absolute;
     padding: 2rem;
-    width: 100px;
+    width: 70px;
     z-index: 100;
     -webkit-transition: 0.6s ease;
     transition: 0.6s ease;
@@ -553,9 +575,12 @@ h2 {
   width: auto;
   height: 10px;
   height: 10px;
-  margin-top: 2rem;
+  margin-top: 1rem;
   text-align: center;
   overflow: visible; }
+  @media (max-width: 768px) {
+    .bullets {
+      margin-top: 1rem; } }
   .bullets__item {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
@@ -564,7 +589,7 @@ h2 {
     height: 10px;
     margin: 0 4px;
     border-radius: 50%;
-    background: rgba(20, 20, 20, 0.4);
+    background: rgba(110, 110, 115, 0.6);
     cursor: pointer; }
     .bullets__item:hover {
       background: #e6ebeb; }
@@ -576,7 +601,10 @@ h2 {
   .section__entry {
     width: 100%;
     height: 30vh;
-    background: #141414; }
+    background: #141414;
+    background-image: url(../img/pawel-czerwinski-HFIiAWrGABQ-unsplash.jpg);
+    background-size: cover;
+    background-position: left; }
     .section__entry__title {
       display: block; }
 
@@ -792,8 +820,7 @@ Variables*/
   @media screen and (min-width: 768px) {
     .skills {
       top: initial;
-      width: 60%;
-      padding: 3rem; } }
+      width: 50%; } }
   .skills .icons {
     width: 100%;
     min-height: 40vh;
@@ -819,16 +846,21 @@ Variables*/
   -webkit-transition: 250ms ease-in-out;
   transition: 250ms ease-in-out;
   opacity: 0;
-  z-index: 40; }
+  z-index: 40;
+  background-color: rgba(20, 20, 20, 0.9);
+  background-size: cover;
+  background-image: url(../img/pawel-czerwinski-background-unsplash.jpg);
+  background-position: 100%; }
   @media screen and (min-width: 768px) {
     .about {
+      background-image: none;
       width: 80%;
-      padding: 4rem; } }
+      padding: 3rem; } }
   .about h2 {
     line-height: 1.4;
     padding-top: 3rem; }
   .about p {
-    color: #6e6e73;
+    color: #c8c8c8;
     margin: 1rem; }
   .about strong {
     color: #e6ebeb; }
@@ -843,10 +875,11 @@ Variables*/
           box-shadow: 0 1px 12px 0 black;
   border-radius: 20px 0 0 20px;
   z-index: 50; }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1200px) {
     .contact {
-      padding: 5rem;
-      top: 0; } }
+      top: 10%;
+      left: 50%;
+      padding-right: 0; } }
   .contact h2 {
     text-align: left;
     margin-bottom: 1rem; }
@@ -879,10 +912,17 @@ Variables*/
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 1rem;
+    margin-top: 1rem;
+    width: 100%;
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly; }
+    @media screen and (min-width: 1200px) {
+      .contact__download {
+        width: 50%;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; } }
     .contact__download .ico {
       cursor: pointer;
       font-size: 6rem;
@@ -902,7 +942,6 @@ Variables*/
   text-align: center;
   color: #6e6e73;
   padding: 1rem;
-  margin-top: 1rem;
   width: 100vw;
   position: absolute;
   bottom: 0; }

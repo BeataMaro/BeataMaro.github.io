@@ -6,11 +6,16 @@
   transition: 250ms ease-in-out;
   opacity: 0;
   z-index: 40;
+  background-color: rgba($black, .9);
+  background-size: cover;
+  background-image: url(../img/pawel-czerwinski-background-unsplash.jpg);
+  background-position: 100%;
 
 
   @include tablet {
+    background-image: none;
     width: 80%;
-    padding: 4 * $space;
+    padding: 3 * $space;
   }
 
   h2 {
@@ -21,7 +26,7 @@
   }
 
   p {
-    color: $grey;
+    color: rgb(200, 200, 200);
     margin: $space;
 
     @include tablet {}
