@@ -237,6 +237,7 @@ h2 {
       position: relative;
       width: 30px;
       height: 30px;
+      padding: 2px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -415,9 +416,8 @@ h2 {
   @media screen and (min-width: 1200px) {
     .home {
       top: 50%;
-      left: 65%;
-      -webkit-transform: translate(-60%, -50%);
-              transform: translate(-60%, -50%); } }
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); } }
   .home h1 {
     color: #e6ebeb;
     font-size: 2.5rem;
