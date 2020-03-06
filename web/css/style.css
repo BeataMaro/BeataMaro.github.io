@@ -197,6 +197,31 @@ h2 {
   font-family: 'Charmonman', cursive;
   font-size: 2rem; }
 
+.preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #e6ebeb;
+  z-index: 1000; }
+  .preloader .loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #141414; }
+    .preloader .loader .counter {
+      position: fixed;
+      left: 50%;
+      -webkit-transform: translate(-50%);
+              transform: translate(-50%);
+      font-family: 'Charmonman', cursive;
+      font-size: 7rem;
+      font-weight: 900;
+      color: #e6ebeb;
+      mix-blend-mode: difference; }
+
 .header {
   position: absolute; }
   .header .hamburger {
