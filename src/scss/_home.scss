@@ -13,8 +13,7 @@
 
     @include desktop {
         top: 50%;
-        left: 65%;
-        transform: translate(-60%, -50%);
+        transform: translateY(-50%);
     }
 
 
