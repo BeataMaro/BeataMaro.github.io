@@ -1,26 +1,33 @@
 .home {
 
     background: transparent;
+    top: 30%;
     opacity: 1;
-    display: grid;
-    place-items: center;
-    width: 100vw;
-    top: 50%;
-    transform: translateY(-50%);
-    overflow: hidden;
+    width: 100%;
     box-shadow: none;
+
+    @include tablet {
+
+        top: 40%;
+    }
+
+    @include desktop {
+        top: 50%;
+        left: 65%;
+        transform: translate(-60%, -50%);
+    }
 
 
     h1 {
 
         color: $white;
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: bolder;
+        margin-top: $space;
 
-        @include desktop {
+        @include tablet {
 
             font-size: 4rem;
-            margin-bottom: $space;
         }
     }
 
@@ -28,10 +35,35 @@
 
         font-size: 3rem;
         font-weight: 900;
-        color: $black;
+        color: salmon;
+        position: relative;
+        overflow: visible;
+        margin-top: $space;
 
-        @include tablet {
-            margin-top: $space;
+        &::before {
+
+            content: '';
+            display: flex;
+            position: absolute;
+            top: -150%;
+            width: 100%;
+            height: 200%;
+            z-index: -1;
+            background: $deep-black;
+            padding: 3 * $space;
+
+            @include tablet {
+
+                height: 200%;
+                top: -250%;
+            }
+
+            @include desktop {
+
+                height: 300%;
+                top: -250%;
+                left: -4 * $space;
+            }
         }
     }
 

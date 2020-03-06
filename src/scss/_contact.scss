@@ -1,18 +1,16 @@
 .contact {
 
-
     top: 20%;
     opacity: 0;
     padding: 2 * $space;
-    box-shadow: 0 1px 12px 0 black;
+    box-shadow: 0 1px 12px 0 $deep-black;
     border-radius: 20px 0 0 20px;
     z-index: 50;
 
-    @include tablet {
-
-        padding: 5 * $space;
-        top: 0;
-
+    @include desktop {
+        top: 10%;
+        left: 50%;
+        padding-right: 0;
     }
 
     h2 {
@@ -60,8 +58,16 @@
     &__download {
 
         display: flex;
-        padding: $space;
+        margin-top: $space;
+        width: 100%;
         justify-content: space-evenly;
+
+        @include desktop {
+
+            width: 50%;
+            justify-content: space-between;
+
+        }
 
         .ico {
 
