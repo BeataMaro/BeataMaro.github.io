@@ -1,15 +1,15 @@
 .about {
+  opacity: 0;
   width: 100%;
   line-height: 1.8;
-  padding: (4 * $space) $space $space;
+  padding: (3 * $space) $space $space;
   border-radius: 0 0 0 20px;
   transition: 250ms ease-in-out;
-  opacity: 0;
-  z-index: 40;
   background-color: rgba($black, .9);
   background-size: cover;
   background-image: url(../img/pawel-czerwinski-background-unsplash.jpg);
   background-position: 100%;
+  z-index: 40;
 
 
   @include tablet {
@@ -22,14 +22,10 @@
 
     line-height: 1.4;
     padding-top: 3 * $space;
-
   }
 
   p {
     color: rgb(200, 200, 200);
-    margin: $space;
-
-    @include tablet {}
   }
 
   strong {

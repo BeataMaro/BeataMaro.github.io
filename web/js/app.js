@@ -5,16 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let preloader = document.querySelector('.preloader');
     let loader = document.querySelector('.loader');
     let element = document.querySelector('.counter');
+    // let title = document.getElementById('hero');
 
     let count = 0;
     let loadingFunction = setInterval(() => {
 
         if (count < 101) {
             document.body.style.position = "fixed";
-
             element.textContent = `${count}%`;
             loader.style.width = `${count}%`;
             count++
+            // title.style.right = '0';
         } else {
             clearInterval(loadingFunction)
             fadeOut(preloader)
