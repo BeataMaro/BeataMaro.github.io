@@ -6,6 +6,7 @@
     width: 100%;
     box-shadow: none;
 
+
     @include tablet {
 
         top: 40%;
@@ -16,52 +17,63 @@
         transform: translateY(-50%);
     }
 
+    &__title {
 
-    h1 {
+        transition: 3s linear;
+        background-image: linear-gradient(to right, rgba($deep-black, .9), transparent);
 
-        color: $white;
-        font-size: 2.5rem;
-        font-weight: bolder;
-        margin-top: $space;
+        h1 {
 
-        @include tablet {
-
-            font-size: 4rem;
-        }
-    }
-
-    h2 {
-
-        font-size: 3rem;
-        font-weight: 900;
-        color: salmon;
-        position: relative;
-        overflow: visible;
-        margin-top: $space;
-
-        &::before {
-
-            content: '';
-            display: flex;
-            position: absolute;
-            top: -150%;
-            width: 100%;
-            height: 200%;
-            z-index: -1;
-            background: $deep-black;
-            padding: 3 * $space;
+            color: $white;
+            font-size: 2.5rem;
+            font-size: 1.5rem;
+            font-weight: bolder;
+            margin-top: $space;
 
             @include tablet {
 
-                height: 200%;
-                top: -250%;
+                font-size: 4rem;
+                font-size: 2.5rem;
             }
+        }
 
-            @include desktop {
+        h2 {
 
-                height: 300%;
-                top: -250%;
-                left: -5 * $space;
+            font-size: 3rem;
+            font-size: 2rem;
+            font-weight: 900;
+            color: salmon;
+            position: relative;
+            overflow: visible;
+            margin-top: $space;
+
+
+            &::before {
+
+                content: '';
+                display: flex;
+                position: absolute;
+                top: -150%;
+                width: 100%;
+                height: 200%;
+                z-index: -1;
+                background: transparent;
+                padding: 3 * $space;
+
+                @include tablet {
+
+                    height: 200%;
+                    top: -250%;
+                }
+
+                @include desktop {
+
+                    height: 300%;
+                    top: -250%;
+                    left: -5 * $space;
+
+
+                }
             }
         }
     }
