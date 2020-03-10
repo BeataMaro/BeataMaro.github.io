@@ -550,8 +550,8 @@ h2 {
     overflow: hidden;
     width: 80%;
     opacity: 1;
-    -webkit-transition: 350ms ease-in;
-    transition: 350ms ease-in; }
+    -webkit-transition: 250ms ease-in;
+    transition: 250ms ease-in; }
     @media screen and (min-width: 768px) {
       .slider__item {
         width: 100%; } }
@@ -562,45 +562,48 @@ h2 {
       display: block;
       border-radius: 50%;
       opacity: 1; }
-    .slider__item img {
+    .slider__item-img {
       max-width: 100%;
-      -webkit-transition: 0.8s ease-in-out;
-      transition: 0.8s ease-in-out;
+      -webkit-transition: 300ms linear;
+      transition: 300ms linear;
       -webkit-transform-origin: center;
               transform-origin: center; }
-  .slider__item-content .globeIcon,
-  .slider__item-content .githubIcon {
-    cursor: pointer;
-    position: absolute;
-    padding: 2rem;
-    width: 70px;
-    z-index: 100;
-    -webkit-transition: 0.6s ease;
-    transition: 0.6s ease;
-    display: none; }
-    @media screen and (min-width: 768px) {
-      .slider__item-content .globeIcon,
-      .slider__item-content .githubIcon {
-        width: 120px; } }
-    .slider__item-content .globeIcon:hover,
-    .slider__item-content .githubIcon:hover {
-      opacity: 1;
-      padding: 1rem;
-      background: rgba(230, 235, 235, 0.5); }
-  .slider__item-content .globeIcon {
-    top: 50%;
-    left: 70%;
-    -webkit-transform: translate(-70%, -50%);
-            transform: translate(-70%, -50%); }
-    @media screen and (max-width: 768px) {
-      .slider__item-content .globeIcon {
-        top: 50%;
-        right: 10%; } }
-  .slider__item-content .githubIcon {
-    top: 50%;
-    left: 30%;
-    -webkit-transform: translate(-30%, -50%);
-            transform: translate(-30%, -50%); }
+    .slider__item-content:hover .slider__item-img {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1); }
+    .slider__item-content .globeIcon,
+    .slider__item-content .githubIcon {
+      cursor: pointer;
+      position: absolute;
+      padding: 2rem;
+      width: 70px;
+      z-index: 100;
+      -webkit-transition: 0.6s ease;
+      transition: 0.6s ease;
+      display: none; }
+      @media screen and (min-width: 768px) {
+        .slider__item-content .globeIcon,
+        .slider__item-content .githubIcon {
+          width: 120px; } }
+      .slider__item-content .globeIcon:hover,
+      .slider__item-content .githubIcon:hover {
+        opacity: 1;
+        padding: 1rem;
+        background: rgba(230, 235, 235, 0.5); }
+    .slider__item-content .globeIcon {
+      top: 50%;
+      left: 70%;
+      -webkit-transform: translate(-70%, -50%);
+              transform: translate(-70%, -50%); }
+      @media screen and (max-width: 768px) {
+        .slider__item-content .globeIcon {
+          top: 50%;
+          right: 10%; } }
+    .slider__item-content .githubIcon {
+      top: 50%;
+      left: 30%;
+      -webkit-transform: translate(-30%, -50%);
+              transform: translate(-30%, -50%); }
 
 .bullets {
   z-index: 100;
