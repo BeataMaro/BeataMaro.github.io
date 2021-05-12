@@ -23,6 +23,6 @@
   "dependencies": {
     "clean-css": "^4.1.11",
     "lodash.template": "^4.5.0",
-    "swiper": "^5.3.1"
+    "swiper": "^6.5.1"
   }
 }
